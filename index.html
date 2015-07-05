@@ -3,21 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Multiplication Circles</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
 <body>
-    <canvas id="dataviz" height="500" width="500"></canvas>
-    <form action="#">
+    <div class="container">
+        <h1>Multiplication Circle <small>Multiplication Tables Visualization Tool</small></h1>
+        <div class="row">
+            <div class="col-md-8">
+                <canvas id="dataviz" height="500" width="500"></canvas>
+            </div>
+            <div class="col-md-4">
+                <form>
+                    <p class="form-group">
+                        <label for="graduation_numbers">Number of graduations:</label>
+                        <input type="range" min="2" step="1" class="graduation_input form-control" />
+                        <input type="text" class="graduation_input form-control" id="graduation_numbers_input" />
+                    </p>
+                    <p class="form-group">
+                        <label for="current_factor">Current factor:</label>
+                        <input type="range" min="2" step="0.1" id="current_factor_slider" class="current_factor"/>
+                        <input type="text" id="current_factor_input" class="current_factor form-control"/>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <h2>How does it work?</h2>
         <p>
-            <label for="graduation_numbers">Number of graduations:</label>
-            <input type="range" min="2" step="1" class="graduation_input" />
-            <input type="text" class="graduation_input" id="graduation_numbers_input" />
+            Mathematics beauty lies in the creation of very complex patterns using
+            only simple steps. This visualization is a good example. Here is the
+            simpe process used to create these advanced representations.
         </p>
         <p>
-            <label for="current_factor">Current factor:</label>
-            <input type="range" min="2" step="0.1" id="current_factor_slider" class="current_factor"/>
-            <input type="text" id="current_factor_input" class="current_factor"/>
+            Draw a circle, and add some graduations on it in order to split the
+            circle into arcs of same length. Let's consider we spitted the circle
+            into 5 equal arcs.
         </p>
-    </form>
+        <p>
+            If we want to display the table of 2 representation, we just have to
+            draw some segments between our graduation, each one linking the multiplied
+            value to the final result. For instance:
+        </p>
+        <ul>
+            <li>Linking graduation <strong>1</strong> to graduation 2 * 1 = <strong>2</strong></li>
+            <li>Linking graduation <strong>2</strong> to graduation 2 * 2 = <strong>4</strong></li>
+            <li>Linking graduation <strong>3</strong> to graduation 2 * 3 = <strong>6</strong></li>
+        </ul>
+        <p>
+            We do not have a enough graduation for the third one, as we need a sixth
+            graduation. So, just apply a modulo of your total number of graduation to
+            get an existing one. In this case, link graduation 3 to 6 % 5 = 1 graduation.
+        </p>
+        <p>
+            Repeat this step until you loop on already existing values.
+        </p>
+        <h2>Resources</h2>
+        <h3>Inspiration</h3>
+        <p>
+            This video has been greatly inspired by a YouTube video from
+            <a href="https://www.youtube.com/user/Micmaths">Mickaël Launay,
+            a French YouTuber</a>:
+        </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-X49VQgi86E" frameborder="0" allowfullscreen></iframe>
+        <h3>Source code</h3>
+        <p>
+            Source code is available on GitHub: <a href="https://github.com/jpetitcolas/multiplication-circle">
+            https://github.com/jpetitcolas/multiplication-circle</a>.
+        </p>
+        <p>
+            This project has been released under MIT license, meaning you can do
+            whatever you want with it, without any restrictions.
+        </p>
+    </div>
     <script src="js/dataviz.js"></script>
 </body>
 </html>
