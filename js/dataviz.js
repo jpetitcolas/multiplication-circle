@@ -1,15 +1,20 @@
 (function() {
     'use strict';
 
+    var canvasContainer = document.getElementById('canvas-container');
+    var WIDTH = canvasContainer.offsetWidth > 600 ? 600 : canvasContainer.offsetWidth;
+    var HEIGHT = WIDTH;
+
     var canvas = document.getElementById('dataviz');
+    canvas.setAttribute('width', WIDTH);
+    canvas.setAttribute('height', HEIGHT);
+
     var ctx = canvas.getContext('2d');
     var parameters = {
         graduationNumber: 5,
         currentFactor: 2
     };
 
-    var WIDTH = canvas.getAttribute('width') * 1 - 10;
-    var HEIGHT = canvas.getAttribute('height') * 1 - 10;
     var RADIUS = HEIGHT / 2;
 
     function emptyCircle() {
@@ -18,7 +23,7 @@
         ctx.fillStyle = '#fff';
         ctx.fill();
         ctx.lineWidth = 1;
-        ctx.strokeStyle = '#aaa';
+        ctx.strokeStyle = 'orange';
         ctx.stroke();
     }
 
@@ -57,7 +62,7 @@
     function addEventListenersTo(className, mappedValue) {
         var mappedInputs = document.getElementsByClassName(className);
         for (var i = 0, c = mappedInputs.length ; i < c ; i++) {
-            mappedInputs[i].addEventListener('change', function() {
+            mappedInputs[i].addEventListener('input', function() {
                 parameters[mappedValue] = this.value * 1;
                 for (var j = 0, c2 = mappedInputs.length ; j < c2 ; j++) {
                     mappedInputs[j].value = parameters[mappedValue];
