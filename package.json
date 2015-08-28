@@ -1,0 +1,35 @@
+{
+  "name": "multiplication-circle",
+  "version": "0.2.0",
+  "description": "Visualize multiplication tables majesty into a simple canvas circle.",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "http-server . & webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpetitcolas/multiplication-circle.git"
+  },
+  "keywords": [
+    "mathematics",
+    "data",
+    "visualization",
+    "d3js",
+    "canvas"
+  ],
+  "author": "Jonathan Petitcolas <petitcolas.jonathan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpetitcolas/multiplication-circle/issues"
+  },
+  "homepage": "https://github.com/jpetitcolas/multiplication-circle#readme",
+  "devDependencies": {
+    "http-server": "^0.8.0",
+    "webpack": "^1.12.0"
+  },
+  "dependencies": {
+    "d3": "^3.5.6"
+  }
+}
