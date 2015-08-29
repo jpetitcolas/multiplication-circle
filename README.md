@@ -4,7 +4,7 @@ Render multiplication table hidden majesty into a circle using a very simple
 algorithm. This project has been inspired by [Mickaël Launay, a French
 YouTuber](https://www.youtube.com/user/Micmaths).
 
-You can view view a live demo and algorithm explanation right on the [GitHub
+You can view a live demo and algorithm explanation right on the [GitHub
 page](http://www.jonathan-petitcolas.com/multiplication-circle/).
 
 ## Local installation
