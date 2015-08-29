@@ -25,6 +25,12 @@ If you want to rebuild your files before a new release, just launch the command:
 npm run build
 ```
 
+But please first ensure that all tests are passing:
+
+``` sh
+npm test
+```
+
 ## License
 
 This project has been released under [MIT license](https://github.com/jpetitcolas/multiplication-circle/blob/gh-pages/LICENSE),

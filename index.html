@@ -5,24 +5,29 @@
     <title>Multiplication Circles</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class="container">
         <h1 style="margin-bottom: 20px;">Multiplication Circle <small>Multiplication Tables Visualization Tool</small></h1>
         <div class="row">
             <div class="col-md-8 text-center" id="canvas-container">
-                <canvas id="dataviz"></canvas>
+                <svg id="circle"></svg>
             </div>
             <div class="col-md-4">
                 <form>
+                    <p>
+                        <strong>Note:</strong> you can specify any number you want into the text fields. However,
+                        for better navigation, sliders are restricted to a small set of values.
+                    </p>
                     <p class="form-group">
                         <label for="graduation_numbers">Number of graduations:</label>
                         <div class="row">
                             <div class="col-md-9">
-                                <input type="range" min="2" max="500" step="1" class="graduation_input" />
+                                <input type="range" value="100" min="0" max="150" step="1" id="graduation_input" class="graduation_input" />
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="graduation_input form-control" id="graduation_numbers_input" />
+                                <input type="text" value="100" class="graduation_input form-control" id="graduation_numbers_input" />
                             </div>
                         </div>
                     </p>
@@ -30,13 +35,14 @@
                         <label for="current_factor">Current factor:</label>
                         <div class="row">
                             <div class="col-md-9">
-                                <input type="range" min="2" max="100" step="0.1" class="current_factor" />
+                                <input type="range" value="2" min="1" max="10" step="0.1" id="current_factor" class="current_factor" />
                             </div>
                             <div class="col-md-3">
-                                <input type="text" class="current_factor form-control" id="current_factor_input" />
+                                <input type="text" value="2" class="current_factor form-control" id="current_factor_input" />
                             </div>
                         </div>
                     </p>
+                    <a href="#"><!-- A dummy link to allow pressing TAB on last input without scrolling --></a>
                 </form>
             </div>
         </div>
